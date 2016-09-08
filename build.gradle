@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+
+jar {
+    baseName = 'rx-legacy'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'io.reactivex:rxjava:1.1.10'
+
+    compile 'com.google.guava:guava:18.0'
+
+    compile 'ch.qos.logback:logback-classic:1.1.7'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+
+    compile 'org.apache.camel:camel-rx:2.17.3'
+    compile 'org.apache.activemq:activemq-camel:5.14.0'
+    compile 'org.apache.activemq:activemq-client:5.14.0'
+
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    compile 'com.squareup.retrofit2:converter-jackson:2.0.1'
+
+    testCompile 'junit:junit:4.12'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
