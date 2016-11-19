@@ -2,7 +2,7 @@
 
 Rough agenda follows:
 
-## CompletableFuture
+## `CompletableFuture`
 
 Similarities
 
@@ -30,12 +30,12 @@ Similarities
 * Polling for file system changes
 * Potential memory leak, RxJava 2.0, `distinctUntilChanged()`
 
-## TestScheduler (test timeouts)
+## `TestScheduler` (test timeouts)
 
 * `timeout()`, `retry()`, `doOnError()`
 * `assertNoValues()`, `assertNoErrors()`
 
-## ReactiveCamel
+## `ReactiveCamel`
 
 	CamelContext camel = new DefaultCamelContext();
 	ReactiveCamel reactiveCamel = new ReactiveCamel(camel);
@@ -46,10 +46,10 @@ Similarities
 			.subscribe(e ->
 					log.info("Message: {}", e));
 
-## Observable.flatMap()
+## `Observable.flatMap()`
 
 * Parallel fetching of URLs
 
-## Observable.interval(), window()
+## `Observable.interval()`, `window()`
 
 * `Pinger`, sliding window of `Status` instances
