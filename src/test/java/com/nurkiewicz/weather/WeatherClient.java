@@ -3,6 +3,7 @@ package com.nurkiewicz.weather;
 import com.nurkiewicz.util.Sleeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rx.Observable;
 
 import java.time.Duration;
 
@@ -16,5 +17,12 @@ public class WeatherClient {
 		//HTTP, HTTP, HTTP
 		return new Weather();
 	}
+
+	public Observable<Weather> rxFetch(String city) {
+		return Observable.fromCallable(
+				() ->
+						fetch(city));
+	}
+
 
 }

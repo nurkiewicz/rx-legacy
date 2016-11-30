@@ -1,7 +1,12 @@
 package com.nurkiewicz.cache;
 
+import com.nurkiewicz.util.Sleeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rx.Observable;
+import rx.schedulers.Schedulers;
+
+import java.time.Duration;
 
 public class CacheServer {
 
@@ -9,7 +14,13 @@ public class CacheServer {
 
 	public String findBy(long key) {
 		log.info("Loading from Memcached: {}", key);
+		Sleeper.sleep(Duration.ofMillis(100));
 		return "<data>" + key + "</data>";
 	}
 
+	public Observable<String> rxFindBy(long key) {
+		return Observable
+				.fromCallable(() -> findBy(key))
+				.subscribeOn(Schedulers.io());
+	}
 }

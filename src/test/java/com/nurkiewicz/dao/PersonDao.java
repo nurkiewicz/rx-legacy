@@ -3,6 +3,7 @@ package com.nurkiewicz.dao;
 import com.nurkiewicz.util.Sleeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rx.Observable;
 
 import java.time.Duration;
 
@@ -17,4 +18,10 @@ public class PersonDao {
 		return new Person();
 	}
 
+	public Observable<Person> rxFindById(int id) {
+//		return Observable.just(findById(id));
+		return Observable.fromCallable(() ->
+				findById(id)
+		);
+	}
 }
