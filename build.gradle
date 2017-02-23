@@ -14,7 +14,8 @@ repositories {
 
 
 dependencies {
-    compile 'io.reactivex:rxjava:1.1.10'
+    compile 'io.reactivex:rxjava:1.2.6'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.6'
 
     compile 'com.google.guava:guava:18.0'
     compile 'org.apache.commons:commons-lang3:3.4'
