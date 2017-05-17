@@ -26,7 +26,7 @@ public class MeetupClient {
 	private ObjectMapper jsonMapper() {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.setPropertyNamingStrategy(
-				PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
+				PropertyNamingStrategy.SNAKE_CASE);
 		objectMapper.configure(
 				DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		return objectMapper;

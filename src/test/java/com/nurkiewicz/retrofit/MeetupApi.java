@@ -9,7 +9,7 @@ public interface MeetupApi {
 	/**
 	 * Oslo:   59.911491, 10.757933
 	 * Warsaw: 52.237049, 21.017532
-	 * Sopot:  54.441581, 18.560096
+	 * Gdańsk: 54.372158, 18.638306
 	 */
 	@GET("/2/cities")
 	Observable<Cities> listCities(
