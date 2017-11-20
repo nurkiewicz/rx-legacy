@@ -1,8 +1,8 @@
 package com.nurkiewicz.retrofit;
 
+import io.reactivex.Flowable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
 
 public interface MeetupApi {
 
@@ -12,7 +12,7 @@ public interface MeetupApi {
 	 * Sopot:  54.441581, 18.560096
 	 */
 	@GET("/2/cities")
-	Observable<Cities> listCities(
+	Flowable<Cities> listCities(
 			@Query("lat") double lat,
 			@Query("lon") double lon
 	);

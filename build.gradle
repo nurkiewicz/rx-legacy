@@ -22,17 +22,20 @@ dependencies {
 
     compile 'ch.qos.logback:logback-classic:1.1.7'
     compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'org.slf4j:jul-to-slf4j:1.7.21'
 
     compile 'org.apache.camel:camel-rx:2.17.3'
     compile 'org.apache.activemq:activemq-camel:5.14.0'
     compile 'org.apache.activemq:activemq-client:5.14.0'
 
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.retrofit2:converter-jackson:2.0.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    compile 'org.projectlombok:lombok:1.16.16'
 
     testCompile 'junit:junit:4.12'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.6'
+    gradleVersion = '4.3.1'
 }
